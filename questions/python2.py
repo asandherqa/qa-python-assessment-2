@@ -286,6 +286,6 @@ def ten(x, y):
     for row in range(row_num):
         for col in range(col_num):
             multi_list[row][col]= row*col
-    return []
+    return multi_list
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
