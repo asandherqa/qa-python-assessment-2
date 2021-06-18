@@ -31,9 +31,10 @@
 # How does a for loop iterate through a string?
 
 def one(string):
-    test
-    return ""
-
+  result = ""
+  for i in range(len(str)):
+    result += str[i] + str[i] + str[i]
+  return result
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
     # <QUESTION 2>
@@ -53,7 +54,16 @@ def one(string):
 
 
 def two(number):
-    return False
+    n = int(number)
+    if (n==1):
+        return False
+    elif (n==2):
+        return True;
+    else:
+        for x in range(2,n):
+            if(n % x==0):
+                return False
+        return True 
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -73,7 +83,7 @@ def two(number):
 
 
 def three(a):
-    return 1
+    return sum([int(str(a)*num) for num in range(1,5)])
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -105,7 +115,17 @@ def three(a):
 
 
 def four(string1, string2):
-    return ""
+    result = ""
+    i = 0
+    while (i < len(string1)) or (i < len(string2)):
+        if (i < len(string1)):
+            result += string1[i]
+        if (i < len(string2)):
+            result += string2[i]
+
+        i += 1
+         
+    return result
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -123,9 +143,11 @@ def four(string1, string2):
     # There is a module which can be used to generate random numbers, this module is called random.
     # The random module contains a function called randint.
 
+import random
 
 def five():
-    return []
+    result = random.sample(range(100,201,2),5)
+    return result
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -147,7 +169,11 @@ def five():
 
 
 def six(string):
-    return False
+    lower_string = string.lower()
+    if lower_string[-2:] == "py":
+        return True
+    else:
+        return False
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -174,7 +200,10 @@ def six(string):
 
 
 def seven(a, b, c):
-    return False
+    n = [a,b,c]
+    n.sort()
+    if n[1]-n[0] == n[2]-n[1]: return True
+    else: return False
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -195,7 +224,10 @@ def seven(a, b, c):
 
 
 def eight(string,  a):
-    return ""
+    mid = len(string)//2
+    begin = mid - a//2
+    end = begin + a
+    return string[:begin]+string[end:]
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -215,7 +247,18 @@ def eight(string,  a):
 
 
 def nine(string1, string2):
-    return False
+    string1 =sorted(string1)
+    string2 = sorted(string2)
+    if len(string1) >= len(string2):
+        if(all(x in string1 for x in string2)):
+            return True
+        else:
+            return False
+    else:
+        if(all(x in string2 for x in string1)):
+            return True
+        else:
+            return False
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -236,6 +279,13 @@ def nine(string1, string2):
 
 
 def ten(x, y):
+    col_num = x
+    row_num = y
+    multi_list = [[0 for col in range(col_num)] for row in range(row_num)]
+    
+    for row in range(row_num):
+        for col in range(col_num):
+            multi_list[row][col]= row*col
     return []
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
